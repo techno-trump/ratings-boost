@@ -1,0 +1,28 @@
+@use "./config.scss" as config;
+@use "./mixins.scss" as mi;
+
+.hero {
+	&__body {
+		display: grid;
+		grid-template-columns: 5.47fr 6.45fr;
+		align-items: center;
+		justify-content: center;
+		gap: mi.rem(128);
+	}
+	&__col {
+	}
+	&__title {
+		font-weight: 500;
+		font-style: Medium;
+		font-size: mi.rem(50);
+		margin-bottom: mi.rem(50);
+	}
+	&__actions {
+		display: grid;
+		grid-auto-flow: column;
+		gap: mi.rem(24);
+	}
+	&__animation {
+		width: 100%;
+	}
+}

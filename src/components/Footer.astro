@@ -1,7 +1,47 @@
 ---
+import Logo from "./Logo.astro";
+
 // const portalHost = import.meta.env.ASTRO_APP_CABINET_HOST;
 ---
 
-<footer class="footer section-space">
-	
+<footer class="footer section-space-top">
+	<div class="container container_wide footer__container">
+		<div class="container container_short footer__body">
+			<Logo direction="horizontal" className="footer__logo" />
+			<div class="footer__copyright">All Rights Reserved © 2025 Ratings Boost</div>
+			<div class="footer__msg footer__msg_primary">
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+				<p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat</p>
+			</div>
+			<div class="footer__social social">
+				<a href="" target="_blank" class="btn btn_social">
+					<span class="btn__label"></span>
+					<span class="icon-facebook btn__icon"></span>
+				</a>
+				<a href="" target="_blank" class="btn btn_social">
+					<span class="btn__label"></span>
+					<span class="icon-instagram btn__icon"></span>
+				</a>
+				<a href="" target="_blank" class="btn btn_social">
+					<span class="btn__label"></span>
+					<span class="icon-linkedin btn__icon"></span>
+				</a>
+				<a href="" target="_blank" class="btn btn_social">
+					<span class="btn__label"></span>
+					<span class="icon-youtube btn__icon"></span>
+				</a>
+			</div>
+			<div class="footer__msg footer__msg_secondary">
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+			</div>
+			<div class="footer__developer">
+				<a href="" class="btn btn_bodyless">
+					<span class="btn__label">Developed by</span>
+					<svg class="btn__icon btn__icon_big" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M23.9287 18.3458V23.8678L22.2304 22.1797L0.193087 0.142409H2.59309L22.2202 19.7695V16.6475L23.9185 18.3458H23.9287ZM19.2914 13.6983V11.2068L17.227 9.22377L23.9185 2.53224V0.12207L14.8168 9.22377H14.827L19.2914 13.6983ZM0.101562 23.8475H2.51173L10.2914 16.0882V16.0678V16.078L18.0507 23.8577H20.4609L10.2914 13.6678" fill="currentColor"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
 </footer>

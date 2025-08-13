@@ -1,4 +1,5 @@
 @use "./config.scss" as config;
+@use "./mixins.scss" as mi;
 
 .burger-btn {
 	display: flex;
@@ -40,5 +41,47 @@
 				transform: rotate(180deg);
 			}
 		}
+	}
+}
+
+.header {
+	color: var(--color-deep-dark);
+	position: sticky;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	padding: mi.rem(40) 0;
+	&__container {
+		margin: 0 calc(var(--container-margin) * 2);
+	}
+	&__body {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		align-items: center;
+		gap: mi.rem(54);
+		padding: mi.rem(24) mi.rem(40);
+		box-shadow: 4px 4px 50px 0px #BFA7A724;
+		border-radius: mi.rem(50);
+		overflow: hidden;
+		background: linear-gradient(108.81deg, rgba(255, 255, 255, 0.36) 3.53%, rgba(255, 255, 255, 0.08) 99.74%);
+		backdrop-filter: blur(10px);
+		border: mi.rem(1.5) solid var(--color-white);
+	}
+	&__nav {
+		display: grid;
+		grid-auto-flow: column;
+		gap: mi.rem(28);
+		justify-content: start;
+	}
+	&__logo {
+		--width: #{mi.rem(150)};
+		--height: #{mi.rem(50)};
+	}
+	&__actions {
+		display: grid;
+		grid-auto-flow: column;
+		gap: mi.rem(16);
+	}
+	&__log-in {
 	}
 }

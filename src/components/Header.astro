@@ -1,7 +1,22 @@
 ---
+import Logo from "./Logo.astro";
+
 //const portalHost = import.meta.env.ASTRO_APP_CABINET_HOST;
 ---
 
 <header id="header" class="header">
-	
+	<div class="container container_wide header__container">
+		<div class="header__body">
+			<Logo direction="horizontal" className="header__logo" />
+			<nav class="header__nav">
+				<a href="#how-it-works" class="link link_md">How it works</a>
+				<a href="#pricing" class="link link_md">Pricing</a>
+				<a href="#testimonials" class="link link_md">Testimonials</a>
+			</nav>
+			<div class="header__actions">
+				<button class="link link_md header__log-in">Log in</button>
+				<button class="btn btn_primary btn_rect-md">Free Trial</button>
+			</div>
+		</div>
+	</div>
 </header>

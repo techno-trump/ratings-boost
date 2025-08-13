@@ -1,0 +1,15 @@
+---
+	interface Props {
+		direction?: "horizontal" | "vertical";
+		className?: string;
+	}
+
+	const { className, direction = "horizontal" } = Astro.props;
+---
+
+<a href="/" class:list={["logo", className]}>
+	<figure class="logo__inner">
+		<img class="logo__img" src={`img/logo-${direction}.svg`} alt="Logo of Ratings boost">
+		<figcaption class="logo__caption">Ratings boost</figcaption>
+	</figure>
+</a>

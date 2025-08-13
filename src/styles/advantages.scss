@@ -1,0 +1,31 @@
+@use "./config.scss" as config;
+@use "./mixins.scss" as mi;
+
+.advantages {
+	&__container {
+		box-shadow: 4px 4px 50px 0px #BFA7A724;
+		border-radius: mi.rem(50);
+		overflow: hidden;
+		background: linear-gradient(108.81deg, rgba(255, 255, 255, 0.36) 3.53%, rgba(255, 255, 255, 0.08) 99.74%);
+		backdrop-filter: blur(10px);
+		border: mi.rem(1.5) solid var(--color-white);
+		padding: mi.rem(38) var(--container-margin);
+	}
+	&__body {
+		display: grid;
+		grid-auto-flow: column;
+		gap: mi.rem(30);
+		justify-content: space-between;
+		
+	}
+	&__item {
+		display: grid;
+		gap: mi.rem(14);
+		grid-auto-flow: column;
+		align-items: center;
+	}
+	&__icon {
+	}
+	&__text {
+	}
+}
