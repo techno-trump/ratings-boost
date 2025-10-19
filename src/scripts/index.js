@@ -43,26 +43,31 @@ document.querySelectorAll(`[data-component="testimonials"]`).forEach(root => {
 			nextEl,
 			prevEl
 		},
+		enabled: true,
 		breakpoints: {
 			1240: {
 				slidesPerView: 2.5,
 				spaceBetween: 30,
 				centeredSlides: true,
+				enabled: true,
 			},
 			1024: {
 				slidesPerView: 2.2,
 				spaceBetween: 30,
 				centeredSlides: true,
+				enabled: true,
 			},
 			840: {
 				slidesPerView: 1.8,
 				spaceBetween: 30,
 				centeredSlides: true,
+				enabled: true,
 			},
 			520: {
 				slidesPerView: 1.6,
 				spaceBetween: 15,
 				centeredSlides: true,
+				enabled: true,
 			}
 		}
 	});
@@ -93,7 +98,7 @@ document.querySelectorAll(`[data-component="packages-slider"]`).forEach(root => 
 		grabCursor: true,
 		slidesPerView: 1,
 		spaceBetween: 16,
-		enabled: true,
+		enabled: false,
 		breakpoints: {
 			1024: {
 				enabled: false,

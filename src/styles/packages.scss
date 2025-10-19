@@ -23,6 +23,10 @@
 		@media (max-width: config.$mbpT) {
 			gap: 0;
 		}
+		@media (max-width: config.$mbpMM) {
+			grid-template-columns: 100%;
+			gap: 30px;
+		}
 	}
 }
 .packages-card {
