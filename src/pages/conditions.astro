@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const separateSteps = (steps: Array<any>, separator: any) => {
+	const result: Array<any> = [];
+	const lastIdx = steps.length - 1;
+	steps.forEach((step, idx) => {
+		result.push(step);
+		if (idx < lastIdx) {
+			result.push(separator);
+		}
+	});
+	return result;
+}
+---
+
+<Layout title="Home page" description="Home page">
+	<section class="article section-space-top">
+		<div class="container container_wide">
+			<div class="container container_short article__container">
+				<div class="article__body">
+					<h1>Terms and Conditions</h1>
+					<p><i>Last updated: January 2025</i></p>
+					<p>Welcome to Ratings Boost! These Terms and Conditions (“Terms”) govern your access to and use of our website and services. By signing up for or using Ratings Boost, you agree to these Terms.</p>
+					<ol>
+						<li>
+							<div>About Us</div>
+							<div>
+								<p>Ratings Boost (“we”, “our”, “us”) provides an online platform that helps businesses collect, manage, and promote customer reviews.</p>
+							</div>
+						</li>
+						<li>
+							<div>Eligibility</div>
+							<div>
+								<p>To use Ratings Boost you must:</p>
+								<ul>
+									<li><span>Be at least 18 years old</span></li>
+									<li><span>Provide accurate registration information</span></li>
+									<li><span>Have the authority to act on behalf of your business</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>Accounts</div>
+							<div>
+								<ul>
+									<li><span>You are responsible for keeping your login details secure.</span></li>
+									<li><span>Notify us immediately if you suspect unauthorised use of your account.</span></li>
+									<li><span>We reserve the right to suspend or terminate accounts that breach these Terms.</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>Use of Service</div>
+							<div>
+								<p>When using Ratings Boost, you agree to:</p>
+								<ul>
+									<li><span>Only upload and send customer information you have lawful permission to use.</span></li>
+									<li><span>Not use the service to send spam, abusive, fraudulent, or misleading review requests.</span></li>
+									<li><span>Comply with all applicable privacy, spam, and marketing laws (including the <b>Spam Act 2003 (Australia)</b> and the <b>CAN-SPAM Act (US)</b>).</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>Subscription & Payment</div>
+							<div>
+								<ul>
+									<li><span>Ratings Boost operates on a subscription basis. Pricing and plan details are on our website.</span></li>
+									<li><span>Fees are billed in advance (monthly or annually, depending on your plan).</span></li>
+									<li><span>Payments are non-refundable except as required by law.</span></li>
+									<li><span>In Australia, services are provided in accordance with your rights under the <b>Australian Consumer Law (ACL).</b></span></li>
+									<li><span>In the US, certain state consumer protection laws may also apply.</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>Intellectual Property</div>
+							<div>
+								<p>Your use of Ratings Boost is also governed by our [Privacy Policy], which complies with:</p>
+								<ul>
+									<li><span>The <b>Privacy Act 1988 (Cth)</b> in Australia</span></li>
+									<li><span>Relevant US federal and state privacy laws (e.g. <b>California Consumer Privacy Act (CCPA)</b> where applicable)</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>Service Availability</div>
+							<div>
+								<ul>
+									<li><span>We aim to provide a reliable service but do not guarantee uninterrupted access.</span></li>
+									<li><span>We may update, modify, or discontinue features at any time without liability.</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>Limitation of Liability</div>
+							<div>
+								<ul>
+									<li><span>Ratings Boost is provided “as is” and “as available.”</span></li>
+									<li><span>To the fullest extent permitted by law, we are not liable for indirect, incidental, or consequential damages, including lost profits or data.</span></li>
+									<li><span>Our total liability for any claim is limited to the subscription fees you paid in the preceding 12 months.</span></li>
+									<li><span>Nothing in these Terms excludes liability where it cannot be excluded under applicable law (including your statutory rights under the <b>ACL</b> in Australia).</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>Termination</div>
+							<div>
+								<ul>
+									<li><span>You may cancel your subscription at any time.</span></li>
+									<li><span>We may suspend or terminate your account if you breach these Terms or misuse the service.</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>Governing Law</div>
+							<div>
+								<ul>
+									<li><span>If you are located in <b>Australia</b>, these Terms are governed by the laws of Queensland, Australia, and disputes will be subject to the exclusive jurisdiction of the courts in Queensland.</span></li>
+									<li><span>If you are located in the <b>United States</b>, these Terms are governed by the laws of the State of Delaware, USA, without regard to conflict of law principles, and disputes will be subject to the courts in Delaware.</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>Changes to Terms</div>
+							<div>
+								<p>We may update these Terms from time to time. The “Last updated” date will always reflect the latest version. Continued use of Ratings Boost means you accept any changes.</p>
+							</div>
+						</li>
+						<li>
+							<div>Contact Us</div>
+							<div>If you have any questions or privacy requests, please contact us:</div>
+							<div class="contacts article__contacts">
+								<div class="contacts__title">Ratings Boost</div>
+								<dl class="contacts__list">
+									<dt><div class="icon-mail"></div> Email</dt>
+									<dd><a href="mailto:support@support">support@support</a></dd>
+									<dt><div class="icon-phone"></div> Phone</dt>
+									<dd><a href="tel:101999999999">101999999999</a></dd>
+								</dl>
+							</div>
+						</li>
+						
+					</ol>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

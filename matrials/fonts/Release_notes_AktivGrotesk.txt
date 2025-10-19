@@ -1,0 +1,226 @@
+==Release Notes for Aktiv Grotesk==
+
+Compiler of release notes: Dalton Maag
+Designer: Dalton Maag
+Designer URL: daltonmaag.com
+
+Release date: 2024-12-09
+
+Change log:
+----------
+
+v6.001:
+- Update /mediummathematicalspace to 4/18 of em space
+- Improve diacritics position on /u.uc
+- Mark attachment case support for smcp + c2sc and Latin only for unic
+- Mark attachment case support for Cyrillic and latin lowercase ascender
+- Fix bug on /carettildedownfunc
+- Add /NNBSP (u+202F) and /horncomb (u+031B)
+- Fix bug with Greek decomposed capitalization
+- Fix an issue in Hebrew where /holamHaser-hb (u+05BA) was not positioning correctly above /vav-hb (u+05D5)
+- Fixed localisation of Hebrew quotation marks
+- Updated the calt feature to solve an issue where Armenian /yi-arm (u+0575) was clashing with other descending characters
+- Improved the consistency of some math operators and symbols across the Italic axis
+- Interpolation improvements
+
+v6.000:
+- Add Malayalam script support
+- Add Small Caps support (Latin, Cyrillic and Greek)
+- Add Icons Supplemental Set
+- Add Unicase support (Latin)
+- Update Greek functionality regarding: 
+  - Keeping the tonos for the disjunctive eta, capitals and small caps.
+  - Greek contextual alternates work as default (no need for Greek script to be set or recognized)
+- Kerning for all scripts works on default script (no need for the scripts to be set or recognized)
+- New Eng default design with localised version for Sami languages
+- Minor refinements in currency glyphs
+- New currency additions: /austral/cedi/guarani/livretournois/peso/pfenning/spesmilo
+- Remove redundant glyphs from static Italic fonts (automatically with the pipeline)
+- Add Adotaccent
+- Updated Uppercase tonos glyphs (Greek) with tonos inside the box and no kerning
+- Minor updates to Devanagari glyphs
+- Minor updates to ogonek positioning
+- Updated /apostrophemod
+- Updated k accent position
+- Updated Cyrillic breve
+- Updated /dialytikatonoscomb
+- Updated /Dje/izhitsa/kadesc
+- Update Corp subsets to support Latin, Cyrillic and Greek
+
+
+v5.002:
+- Fixed bug with /stardiaeresisfunc behaving as combining mark
+
+v5.001:
+- Updated Pixelfix that solves icons rendering bugs
+- Fixed bug with /one-ar.tnum not accessible
+- Fixed bug with /gafTwodotsbelow-ar.fina not accessible
+- Added a calt substitution for /comma-arm.cap 
+
+v5.000:
+- Added Latin extension
+- Added Cyrillic extension
+- Added Greek Polytonic
+- Added Arabic extension
+- Added Devanagari
+- Added Icons extension
+- Minor updates
+
+v4.000:
+- Added Thai
+- Added Hebrew
+- Added Georgian
+- Added Armenian 
+- Added Arabic Italics
+- Minor fixes on brevecomb.cyrl, dieresiscomb and dialyticatonos alignment
+- Addition of WghtItal variable font file
+
+v3.021:
+- Fixed bug that caused issue with rendering of tonos
+- Update to Greek capitalization feature
+- Update advance widths on /I related composites on Hair Italic
+
+v3.020:
+- Add Basic and Core subsets
+- Outline, kerning, hinting fixes
+
+v3.013:
+- Added generation of Arabic and Corp subsets for Desktop and App fonts
+
+v3.012:
+- Stylemap minor update 
+
+v3.011:
+- Add Arabic and Corp subsets for webfonts 
+
+v3.010: 
+- Greek kerning fixes and fixed epsilon in black weights
+- New vertical metrics approach (metrics version 4.000)
+- Screen optimization
+- Added MKD/SRB /sha localisation
+- Added static fonts to release
+- Adjusted Aring to more commonly accepted form
+- Minor kerning and component alignment fixes
+- Rename styles for Width Weight Slant naming scheme
+
+v3.000:
+- Add Cyrillic, Greek, Vietnamese and Symbols
+
+v2.003:
+- Add overlap flags for glyphs and composites (bug fix)
+
+v2.002:
+- Added Ruble, Hdotbelow, hdotbelow, Ldotbelow, ldotbelow and legacy ligatures
+- Corrected encoding of nbhyphen
+- Corrected design of initial and medial alefMaksura
+
+v2.001:
+- Urdu OpenType feature fixed
+
+v2.000
+- New SemiBold instance
+- Add support for Arabic
+
+
+Basic information
+-----------------
+
+- Font family name: 
+    - Static: Aktiv Grotesk, Aktiv Grotesk Cd, Aktiv Grotesk Ex
+    - Variable: Aktiv Grotesk VF
+    
+- TrueType Version record: 6.001
+- Character Set: Latin Extended, Arabic Extended, Cyrillic, Greek Polytonic, Vietnamese, Thai, Hebrew, Georgian, Armenian, Devanagari, Malayalam
+- Supported scripts: Latin, Arabic, Greek Polytonic, Cyrillic, Thai, Hebrew, Georgian, Armenian, Devanagari, Malayalam
+- Usage: Text and Display
+- Static weights: 9 (Hair, Thin, Light, Regular, Medium, SemiBold, Bold, XBold, Black)
+- Static widths: 3 (Condensed, Normal, Extended)
+
+- Instances and static font files: 54 
+
+Cd Hair, Cd Thin, Cd Light, Cd Regular, Cd Medium, Cd SemiBold, Cd Bold, Cd XBold, Cd Black
+Cd Hair Italic, Cd Thin Italic, Cd Light Italic, Cd Italic, Cd Medium Italic, Cd SemiBold Italic, Cd Bold Italic, Cd XBold Italic, Cd Black Italic
+Hair, Thin, Light, Regular, Medium, SemiBold, Bold, XBold, Black
+Hair Italic, Thin Italic, Light Italic, Italic, Medium Italic, SemiBold Italic, Bold Italic, XBold Italic, Black Italic
+Ex Hair, Ex Thin, Ex Light, Ex Regular, Ex Medium, Ex SemiBold, Ex Bold, Ex XBold, Ex Black
+Ex Hair Italic, Ex Thin Italic, Ex Light Italic, Ex Italic, Ex Medium Italic, Ex SemiBold Italic, Ex Bold Italic, Ex XBold Italic, Ex Black Italic
+
+Variable Font files in this release: 5
+
+    File: AktivGroteskVF_WghtWidthItal.ttf
+        Number of axes: 3
+            - Weight
+                tag: wght
+                range: 100 (Hair) - 900 (Black)
+            - Width
+                tag: wdth
+                range: 75 (Condensed) - 125 (Extended)
+            - Italic
+                tag: ital
+                range: 0 (Upright) - 1 (Italic)
+
+    File: AktivGroteskVF_WghtWidth.ttf and AktivGroteskVF_Italics_WghtWdth:
+        Number of axes: 2
+            - Weight
+            - Width
+        Upright and Italic styles are separated into two files; the font weight of file can be controlled through the Weight axis. The Italic axis is deactivated.
+
+    File: AktivGroteskVF_WghtItal.ttf
+        Number of axes: 2
+            - Weight
+                tag: wght
+                range: 100 (Hair) - 900 (Black)
+            - Italic
+                tag: ital
+                range: 0 (Upright) - 1 (Italic)
+
+    File: AktivGroteskVF_Wght.ttf and AktivGroteskVFItal_Wght.ttf
+        Number of axes: 1
+            - Weight
+        Upright and Italic styles are separated into two files; the font weight of file can be controlled through the Weight axis. The Italic axis is deactivated.        
+ 
+
+Technology
+----------
+
+File formats:
+    - Static fonts: 
+        - Desktop: TTF (TrueType-based OpenType format)
+        - Apps: TTF (TrueType-based OpenType format)
+        - Webfonts: WOFF; WOFF2 (Web Open Font Format). Subset webfonts provided for Corp, Arabic, Thai, Hebrew, Georgian, Armenian, Devanagari, Malayalam character sets.     
+
+    - Variable: 
+        - Desktop: TTF (TrueType-based OpenType format)
+        - Apps: TTF (TrueType-based OpenType format)
+        - Webfonts: WOFF; WOFF2 (Web Open Font Format). Subset webfonts provided for Corp, Arabic, Thai, Hebrew, Georgian, Armenian, Devanagari, Malayalam character sets.  
+
+Screen optimization information: 
+- PixelFix CTAA screen optimization technology.
+
+Default numerals: 
+    - Tabular for Latin, Devanagari and Malayalam. Proportional numerals accessible via OpenType features (pnum feature)
+    - Proportional for Arabic and Hebrew. Tabular numerals accessible via OpenType features (tnum feature)
+    - Proportional only for Thai.
+
+Other Information
+----------
+
+The fonts contain the following OpenType Stylistic Sets:
+    - ss01: Urdu numbers (Arabic)
+    - ss02: Latin numbers (Arabic, Devanagari, Malayalam and Thai)
+    - ss03: Vowel insertion above name of God (Arabic)
+    - ss04: Alternate UC Greek prosgegrammeni forms (Greek)
+    - ss10: Disable Dutch ij ligatures
+
+The fonts contain the following OpenType features
+    - locl: Localised forms
+    - ordn: Ordinals
+    - frac/sups/subs/sinf/numr/dnom: Fractions and small numerals
+    - pnum/tnum: Proportional and Tabular numerals
+    - lnum/onum: Lining numerals and Old Style numerals
+    - smcp: Small Caps and numerals (Latin, Cyrillic and Greek)
+    - c2sc: Caps to Small Caps (Latin, Cyrillic and Greek)
+    - unic: Unicase (All Small Caps with alternate a e m n u). All European Latin only.
+    - liga: Standard ligatures (Latin and Armenian)
+    - rlig: Required Ligatures (Arabic)
+    - case: Case Punctuation

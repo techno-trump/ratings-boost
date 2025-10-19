@@ -1,0 +1,68 @@
+@use "./config.scss" as config;
+@use "./mixins.scss" as mi;
+
+.learn-more {
+	background-repeat: repeat;
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	&__title {
+		margin-bottom: mi.rem(38);
+		max-width: mi.rem(970);
+	}
+	&__description {
+		font-family: var(--font-family-secondary);
+		margin-bottom: mi.rem(100);
+		max-width: mi.rem(870);
+		@include mi.aval(font-size, 18, 24, "both", 375,  768);
+		@media (max-width: config.$mbpT) {
+			margin-bottom: 80px;
+		}
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(mi.rem(340), 1fr));
+		gap: mi.rem(60) mi.rem(30);
+		margin-bottom: mi.rem(60);
+		@media (max-width: config.$mbpSPC) {
+			gap: 40px 30px;
+		}
+		@media (max-width: config.$mbpT) {
+			margin-bottom: 110px;
+		}
+		@media (max-width: config.$mbpM) {
+			gap: 24px;
+			margin-bottom: 80px;
+		}
+	}
+}
+.learn-more-card {
+	display: grid;
+	align-content: start;
+	align-items: center;
+	grid-template-rows: auto 2.6em auto;
+	justify-items: center;
+	gap: mi.rem(24);
+	padding: mi.rem(24);
+	backdrop-filter: blur(10px);
+	box-shadow: 4px 4px 50px 0px #BFA7A724;
+	background: linear-gradient(108.81deg, rgba(255, 255, 255, 0.5) 3.53%, rgba(255, 255, 255, 0.24) 99.74%);
+	border-radius: mi.rem(30);
+	@include mi.aval(font-size, 22, 28, "both", 375,  768);
+	@media (max-width: config.$mbpMM) {
+		padding: 20px;
+	}
+	&__icon {
+		width: mi.rem(190);
+		height: mi.rem(190);
+		object-fit: contain;
+	}
+	&__description {
+		font-family: var(--font-family-secondary);
+		font-weight: 500;
+		font-size: mi.rem(22);
+	}
+}

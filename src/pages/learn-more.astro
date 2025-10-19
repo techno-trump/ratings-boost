@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const separateSteps = (steps: Array<any>, separator: any) => {
+	const result: Array<any> = [];
+	const lastIdx = steps.length - 1;
+	steps.forEach((step, idx) => {
+		result.push(step);
+		if (idx < lastIdx) {
+			result.push(separator);
+		}
+	});
+	return result;
+}
+---
+
+<Layout title="Lern more" description="Learn more about the service">
+	<section class="nav-panel">
+		<div class="container container_wide">
+			<div class="container container_short nav-panel__body">
+				<a href="/" class="btn btn_page-nav">
+					<span class="btn__icon icon-arrow-left"></span>
+					<div class="btn__label">Back to Home Page</div>
+				</a>
+			</div>
+		</div>
+	</section>
+	<section class="learn-more section-space" style="background-image: url(img/testimonials-bg.webp);">
+		<div class="container container_wide">
+			<div class="container container_short learn-more__body">
+				<h1 class="learn-more__title section__title section__title_lg">Turn Happy Customers into 5-Star Google Reviews</h1>
+				<div class="learn-more__description"> Most businesses lose out because satisfied customers stay silent. RatingsBoost changes that. Our automated system catches your happiest clients at the right moment, makes it effortless for them to leave a review, and sends those 5-star ratings straight to Google. The result? A stronger reputation, more trust, and more leads—without extra work for your team.</div>
+				<div class="learn-more__list">
+					
+					{
+						[
+							{
+								title: "Easy Set-Up & Operation",
+								description: "Takes less than 10 minutes to get started—fully automated emails & SMS work in the background.",
+								icon: "feedback"
+							},
+							{
+								title: "More Stars, More Revenue",
+								description: "1 extra star can mean +13% more clicks & +18% more revenue (Harvard Business Review benchmark).",
+								icon: "five-stars"
+							},
+							{
+								title: "Intelligent Customer Outreach",
+								description: "Smart timing and reminder limits built-in so clients never feel spammed.",
+								icon: "free-trial"
+							},
+							{
+								title: "Works With Any System",
+								description: "Upload email lists, connect POS/CRM via Zapier, or offer one-tap QR codes at checkout.",
+								icon: "any-system"
+							},
+							{
+								title: "Fully Compliant",
+								description: "Top-level security & privacy, compliant with Google T&C.",
+								icon: "compliant"
+							},
+							{
+								title: "No Payment Needed to Begin",
+								description: "Cancel in the first 90 days and pay nothing.",
+								icon: "fast-setup"
+							}
+						].map((meta) => <div class="learn-more-card">
+															<img src={`img/icons/${meta.icon}.svg`} class="learn-more-card__icon" alt="Advantage icon" />
+															<h3 class="learn-more-card__title">{meta.title}</h3>
+															<div class="learn-more-card__description">{meta.description}</div>
+														</div>)
+					}
+				</div>
+				<div class="learn-more__actions">
+					<a href="" class="btn btn_primary btn_rect-lg">Free Trial</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

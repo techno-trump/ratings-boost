@@ -4,16 +4,34 @@
 .boost {
 	&__body {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr minmax(mi.rem(500), 1fr);
 		align-items: center;
 		justify-content: start;
 		gap: mi.rem(20);
+		@media (max-width: config.$mbpT) {
+			grid-template-columns: 100%;
+			justify-items: center;
+			gap: 40px;
+			text-align: center;
+		}
 	}
 	&__col {
+		&_img {
+			width: 100%;
+			max-width: 68.39%;
+			@media (max-width: config.$mbpSPC) {
+				max-width: 85%;
+			}
+			@media (max-width: config.$mbpT) {
+				max-width: 55%;
+			}
+			@media (max-width: config.$mbpMM) {
+				max-width: 100%;
+			}
+		}
 	}
 	&__img {
 		--ratio: 100%;
-		width: 68.39%;
 	}
 	&__title {
 		margin-bottom: mi.rem(40);
@@ -25,10 +43,19 @@
 		font-size: mi.rem(26);
 		line-height: 1.3;
 		margin-bottom: mi.rem(40);
+		@media (max-width: config.$mbpT) {
+			max-width: mi.rem(650);
+		}
 	}
 	&__actions {
 		display: grid;
 		grid-auto-flow: column;
 		gap: mi.rem(24);
+		@media (max-width: 666px) {
+			grid-auto-flow: row;
+			max-width: 340px;
+			width: 100%;
+			margin: auto;
+		}
 	}
 }

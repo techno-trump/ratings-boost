@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const separateSteps = (steps: Array<any>, separator: any) => {
+	const result: Array<any> = [];
+	const lastIdx = steps.length - 1;
+	steps.forEach((step, idx) => {
+		result.push(step);
+		if (idx < lastIdx) {
+			result.push(separator);
+		}
+	});
+	return result;
+}
+---
+
+<Layout title="Home page" description="Home page">
+	<section class="article section-space-top">
+		<div class="container container_wide">
+			<div class="container container_short article__container">
+				<div class="article__body">
+					<h1>Privacy Policy</h1>
+					<p><i>Last updated: January 2025</i></p>
+					<p>Ratings Boost (“we”, “our”, “us”) respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose and safeguard your information when you use our website and services.</p>
+					<ol>
+						<li>
+							<div>Information We Collect</div>
+							<div>
+								<p>We may collect the following types of information:</p>
+								<ul>
+									<li><span><b>Personal Information</b> – name, email, phone, business details, billing information.</span></li>
+									<li><span><b>Customer Data</b> – customer names, phone numbers, emails provided by you to send review invitations.</span></li>
+									<li><span><b>Usage Information</b> – IP address, browser type, device details, pages visited, access times.</span></li>
+									<li><span><b>Cookies & Tracking</b> – we use cookies and similar technologies to improve the user experience, analyse performance, and support@support targeted advertising.</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>How We Use Your Information</div>
+							<div>
+								<p>We use information to:</p>
+								<ul>
+									<li><span>Provide, operate, and improve our services</span></li>
+									<li><span>Process payments and manage subscriptions</span></li>
+									<li><span>Send review invitations and follow-up messages on your behalf</span></li>
+									<li><span>Communicate with you about product updates, promotions, and support@support</span></li>
+									<li><span>Monitor usage and trends to improve service reliability and features</span></li>
+									<li><span>Comply with legal and regulatory requirements</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>Legal Basis for Processing</div>
+							<div>
+								<p>Depending on your location, we rely on different legal grounds to process your information:</p>
+								<ul>
+									<li><span><b>Australia: </b>compliance with the <b>Privacy Act 1988 (Cth)</b> and the <b>Spam Act 2003.</b></span></li>
+									<li><span><b>United States: </b>compliance with applicable state and federal laws, including the <b>California Consumer Privacy Act (CCPA)</b> and the <b>CAN-SPAM Act.</b></span></li>
+									<li><span><b>Consent: </b>in cases where we rely on your consent (e.g. marketing communications).</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>Sharing of Information</div>
+							<div>
+								<p>We do not sell or rent your personal data. We may share information with:</p>
+								<ul>
+									<li><span><b>Service Providers</b> – third-party vendors (payment processors, hosting, analytics, communications).</span></li>
+									<li><span><b>Legal Obligations</b> – if required by law or court order.</span></li>
+									<li><span><b>Business Transfers</b> – if Ratings Boost is involved in a merger, acquisition, or sale of assets.</span></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div>International Transfers</div>
+							<div>Your information may be transferred and processed outside your country, including in Australia and the United States. We take reasonable steps to ensure such data is handled securely and in compliance with applicable laws.</div>
+						</li>
+						<li>
+							<div>Data Security</div>
+							<div>We use industry-standard safeguards (encryption, access controls, secure hosting) to protect your information. However, no system is completely secure and we cannot guarantee absolute protection.</div>
+						</li>
+						<li>
+							<div>Data Retention</div>
+							<div>We retain information only as long as needed to provide services, meet legal obligations, resolve disputes, and enforce agreements.</div>
+						</li>
+						<li>
+							<div>Your Rights</div>
+							<div>
+								<p>Australia</p>
+								<ul>
+									<li><span>Access and correct your personal information under the <b>Privacy Act 1988 (Cth).</b></span></li>
+									<li><span>Opt out of marketing communications at any time.</span></li>
+								</ul>
+								<p>United States</p>
+								<ul>
+									<li>
+										<div>
+											<p>California residents have additional rights under the CCPA, including:</p>
+											<ul>
+												<li><span>Right to know what personal data we collect</span></li>
+												<li><span>Right to request deletion of personal data</span></li>
+												<li><span>Right to opt out of the sale of personal data (we do not sell data)</span></li>
+												<li><span>Right to non-discrimination for exercising these rights</span></li>
+											</ul>
+										</div>
+									</li>
+									<li><span>Opt out of marketing communications at any time.</span></li>
+								</ul>
+								<div>To exercise your rights, contact us at <a href="mailto:support@support">support@support</a></div>
+							</div>
+						</li>
+						<li>
+							<div>Cookies & Tracking</div>
+							<div>You can control or disable cookies through your browser settings. Some features of our site may not function properly without cookies.</div>
+						</li>
+						<li>
+							<div>Children’s Privacy</div>
+							<div>Ratings Boost is not directed to individuals under 18. We do not knowingly collect information from minors.</div>
+						</li>
+						<li>
+							<div>Third-Party Links</div>
+							<div>Our website may include links to third-party websites. We are not responsible for their privacy practices or content.</div>
+						</li>
+						<li>
+							<div>Updates to This Policy</div>
+							<div>We may update this Privacy Policy from time to time. The “Last updated” date will reflect the most recent version.</div>
+						</li>
+						<li>
+							<div>Contact Us</div>
+							<div>If you have any questions or privacy requests, please contact us:</div>
+							<div class="contacts article__contacts">
+								<div class="contacts__title">Ratings Boost</div>
+								<dl class="contacts__list">
+									<dt><div class="icon-mail"></div> Email</dt>
+									<dd><a href="mailto:support@support">support@support</a></dd>
+									<dt><div class="icon-phone"></div> Phone</dt>
+									<dd><a href="tel:101999999999">101999999999</a></dd>
+								</dl>
+							</div>
+						</li>
+						
+					</ol>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

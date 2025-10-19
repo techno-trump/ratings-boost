@@ -2,14 +2,17 @@
 @use "./mixins.scss" as mi;
 
 :root {
+	--scroll-width: 17px;
+	--scroll-compensation: 0px;
 	--container-margin: #{mi.rem(40)};
 	--section-space: #{mi.rem(70)};
 	@media (max-width: config.$mbpT) {
-		--section-space: 36px;
+		--section-space: 55px;
 	}
-	// @media (max-width: config.$mbpM) {
-	// 	--section-space: 24px;
-	// }
+	@media (max-width: config.$mbpM) {
+		--section-space: 40px;
+		--container-margin: 16px;
+	}
 }
 .section-space-bottom, .section-space {
 	padding-bottom: var(--section-space);
@@ -18,16 +21,14 @@
 	padding-top: var(--section-space);
 }
 html {
-	--scroll-width: 0px;
-	&:not(.is-mobile) {
-		--scroll-width: 17px;
+	&.is-mobile {
+		--scroll-width: 0px;
 	}
-	--scroll-compensation: 0px;
 }
-html.scroll-lock-by-drawer {
-	overflow: hidden;
+html.scroll-lock-by-drawer, .fslightbox-open {
 	--scroll-compensation: var(--scroll-width);
 	padding-right: var(--scroll-width);
+	overflow: hidden;
 }
 body {
 	flex: 1 1 auto;
@@ -69,8 +70,17 @@ body main {
 		font-style: Medium;
 		font-size: mi.rem(40);
 		line-height: 1.3;
+		@include mi.aval(font-size, 26, 40, "both", 375, 768);
 		&_lg {
-			font-size: mi.rem(62);
+			@include mi.aval(font-size, 26, 62, "both", 375, 1920);
 		}
+	}
+}
+.go-up-btn {
+	position: fixed;
+	right: mi.rem(40);
+	bottom: mi.rem(40);
+	@media (max-width: config.$mbpM) {
+		display: none;
 	}
 }

@@ -24,7 +24,7 @@ const mode = import.meta.env.MODE as ("development" | "production");
 		<meta name="app-mode" content={mode} />
 		<style is:inline>
 			/* @import url(https://fonts.googleapis.com/css?family=Inter+Tight:regular,500,600,700,500italic&display=swap); */
-			@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap);
+			@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:300,regular,500,600,700,800,900&display=swap);
 			
 		</style>
 		{mode === "production" && <link rel="stylesheet" href="./assets/main.css" />}
@@ -34,10 +34,14 @@ const mode = import.meta.env.MODE as ("development" | "production");
 	</head>
 	<body class="tg-regular">
 		{empty ? null : <Header></Header>}
-		<main>
+		<main id="main">
 			<slot />
 		</main>
 		{empty ? null : <Footer></Footer>}
+		<a href="#main" target="_blank" class="btn btn_go-up go-up-btn">
+			<span class="btn__label btn__label_hidden">Go to page header</span>
+			<span class="icon-arrow-up btn__icon"></span>
+		</a>
 		<slot name="drawers" />
 	</body>
 </html>

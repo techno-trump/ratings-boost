@@ -10,13 +10,46 @@
 		backdrop-filter: blur(10px);
 		border: mi.rem(1.5) solid var(--color-white);
 		padding: mi.rem(38) var(--container-margin);
+		overflow: hidden;
+		@media (max-width: config.$mbpT) {
+			border-radius: 32px;
+		}
+		@media (max-width: config.$mbpM) {
+			padding: 16px var(--container-margin);
+			border-radius: 22px;
+		}
 	}
 	&__body {
+		@media (max-width: config.$mbpT) {
+			display: grid;
+			grid-template-columns: 100%;
+			justify-content: center;
+		}
+		@media (max-width: config.$mbpM) {
+			justify-content: start;
+		}
+	}
+	&__wrapper {
 		display: grid;
 		grid-auto-flow: column;
 		gap: mi.rem(30);
 		justify-content: space-between;
-		
+		width: 100%;
+		transition: transform 0.3s linear;
+		@media (max-width: config.$mbpT) {
+			grid-template-columns: 1fr 1fr;
+			grid-auto-flow: row;
+			justify-content: center;
+			justify-items: start;
+			column-gap: 50px;
+		}
+		@media (max-width: config.$mbpM) {
+			display: flex;
+			justify-content: start;
+			width: 100%;
+			white-space: nowrap;
+			gap: 0;
+		}
 	}
 	&__item {
 		display: grid;
@@ -25,6 +58,13 @@
 		align-items: center;
 	}
 	&__icon {
+		width: mi.rem(64);
+		height: mi.rem(64);
+		object-fit: contain;
+		@media (max-width: config.$mbpM) {
+			width: mi.rem(36);
+			height: mi.rem(36);
+		}
 	}
 	&__text {
 	}

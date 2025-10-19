@@ -17,6 +17,41 @@ import Logo from "./Logo.astro";
 				<button class="link link_md header__log-in">Log in</button>
 				<button class="btn btn_primary btn_rect-md">Free Trial</button>
 			</div>
+			<div class="header__burger">
+				<button type="button" class="header__burger-btn burger-btn" data-drawer-toggle="burger-menu">
+					<span class="burger-btn__label">Menu</span>
+					<div class="burger-btn__body">
+						<div class="burger-btn__inner">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</button>
+			</div>
 		</div>
 	</div>
 </header>
+<div class="burger-menu" data-drawer="burger-menu" data-lenis-prevent>
+	<div class="burger-menu__underlay"></div>
+	<div class="burger-menu__panel-wrap">
+		<div class="burger-menu__panel" data-elem="drawer.panel">
+			<button type="button" class="btn burger-menu__close-btn" data-drawer-close="burger-menu">
+				<span class="btn__label btn__label_hidden">Previous slide</span>
+				<span class="icon-close btn__icon"></span>
+			</button>
+			<div class="burger-menu__inner">
+				<Logo direction="horizontal" className="burger-menu__logo" />
+				<nav class="burger-menu__nav">
+					<a href="#how-it-works" class="link link_md link_havy">How it works</a>
+					<a href="#pricing" class="link link_md link_havy">Pricing</a>
+					<a href="#testimonials" class="link link_md link_havy">Testimonials</a>
+				</nav>
+				<div class="burger-menu__actions">
+					<button class="link link_md header__log-in link_havy">Log in</button>
+					<button class="btn btn_primary btn_rect-md">Free Trial</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,14 +1,28 @@
 @use "./config.scss" as config;
 @use "./mixins.scss" as mi;
 .packages {
+	overflow: hidden;
 	&__title {
 		text-align: center;
 		margin-bottom: mi.rem(90);
+		@media (max-width: config.$mbpT) {
+			margin-bottom: mi.rem(80);
+		}
+		@media (max-width: config.$mbpT) {
+			margin-bottom: mi.rem(40);
+		}
 	}
 	&__list {
 		display: grid;
+		grid-template-columns: 100%;
+	}
+	&__list-wrapper {
+		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: mi.rem(30);
+		@media (max-width: config.$mbpT) {
+			gap: 0;
+		}
 	}
 }
 .packages-card {
@@ -36,6 +50,7 @@
 		height: mi.rem(50);
 	}
 	&__description {
+		font-family: var(--font-family-secondary);
 		grid-column: auto/span 2;
 		font-weight: 500;
 		font-style: Medium;
@@ -50,6 +65,7 @@
 		margin: mi.rem(24) 0;
 	}
 	&__features {
+		flex: 1 1 auto;
 		display: grid;
 		gap: mi.rem(12);
 		margin-bottom: mi.rem(24);
@@ -59,6 +75,8 @@
 		grid-auto-flow: column;
 		justify-content: start;
 		gap: mi.rem(8);
+		font-family: var(--font-family-secondary);
+		font-size: mi.rem(20);
 		&::before {
 			content: "";
 			position: relative;

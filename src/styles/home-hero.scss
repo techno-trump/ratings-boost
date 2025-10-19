@@ -4,25 +4,75 @@
 .hero {
 	&__body {
 		display: grid;
-		grid-template-columns: 5.47fr 6.45fr;
+		grid-template-columns: minmax(500px, 5.47fr) 6.45fr;
 		align-items: center;
 		justify-content: center;
-		gap: mi.rem(128);
-	}
-	&__col {
+		gap: mi.rem(80);
+		padding-top: mi.rem(40);
+		@media (max-width: config.$mbpT) {
+			grid-template-columns: 100%;
+			justify-items: center;
+			padding-top: 80px;
+		}
+		@media (max-width: config.$mbpM) {
+			padding-top: 40px;
+		}
 	}
 	&__title {
-		font-weight: 500;
-		font-style: Medium;
-		font-size: mi.rem(50);
+		font-size: mi.rem(44);
+		margin-bottom: mi.rem(30);
+		@include mi.aval(font-size, 32, 44, "none", 1024, 1920);
+		@include mi.aval(font-size, 26, 44, "end", 375, 768);
+		@media (max-width: config.$mbpT) {
+			text-align: center;
+		}
+	}
+	&__col {
+		&_info {
+			@media (max-width: config.$mbpT) {
+				max-width: 560px;
+			}
+		}
+		&_animation {
+			display: grid;
+		}
+	}
+	&__description {
+		font-weight: 400;
+		font-family: var(--font-family-secondary);
+		color: var(--color-gray-40);
+		line-height: 1.3;
 		margin-bottom: mi.rem(50);
+		font-size: mi.rem(26);
+		@include mi.aval(font-size, 20, 26, "end", 375, 768);
+		@media (max-width: config.$mbpT) {
+			text-align: center;
+		}
+		@media (max-width: config.$mbpMM) {
+			margin-bottom: mi.rem(40);
+		}
 	}
 	&__actions {
 		display: grid;
 		grid-auto-flow: column;
 		gap: mi.rem(24);
+		@media (max-width: 666px) {
+			grid-auto-flow: row;
+			max-width: 340px;
+			width: 100%;
+			margin: auto;
+		}
 	}
 	&__animation {
-		width: 100%;
+		justify-self: center;
+		width: 70%;
+		border-radius: mi.rem(40);
+		overflow: hidden;
+		@media (max-width: config.$mbpT) {
+			max-width: 700px;
+		}
+		@media (max-width: config.$mbpM) {
+			width: 100%;
+		}
 	}
 }

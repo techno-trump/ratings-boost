@@ -1,6 +1,6 @@
 @use "./config.scss" as config;
 @use "./mixins.scss" as mi;
-.tesimonials {
+.testimonials {
 	&__wrap {
 		margin-top: mi.rem(-1000);
 		margin-bottom: mi.rem(-300);
@@ -37,6 +37,12 @@
 	&__title {
 		text-align: center;
 		margin-bottom: mi.rem(125);
+		@media (max-width: config.$mbpT) {
+			margin-bottom: mi.rem(80);
+		}
+		@media (max-width: config.$mbpM) {
+			margin-bottom: mi.rem(40);
+		}
 	}
 	&__slider {
 		margin-bottom: mi.rem(40);
@@ -56,10 +62,17 @@
 		display: inline-grid;
 		grid-template-columns: 1fr 1fr;
 		gap: mi.rem(24);
+		@media (max-width: 666px) {
+			grid-template-columns: auto;
+			grid-auto-flow: row;
+			max-width: 340px;
+			width: 100%;
+			margin: auto;
+		}
 	}
 }
-.tesimonials-card {
-	flex: 0 0 auto;
+.testimonials-card {
+	flex: 0 0 auto;	
 	display: grid;
 	gap: mi.rem(16);
 	padding: mi.rem(24);
@@ -93,6 +106,9 @@
 		grid-auto-flow: column;
 		justify-content: space-between;
 		gap: mi.rem(14);
+		@media (max-width: config.$mbpMM) {
+			grid-auto-flow: row;
+		}
 	}
 	&__company {
 		color: var(--color-text-base-30);

@@ -2,7 +2,7 @@
 @use "./mixins.scss" as mi;
 
 .footer {
-	font-family: Avenir;
+	font-family: var(--font-family-secondary);
 	font-weight: 500;
 	font-style: Medium;
 	font-size: mi.rem(12);
@@ -17,40 +17,94 @@
 		border: mi.rem(1.5) solid var(--color-white);
 		backdrop-filter: blur(10px);
 	}
+	&__policy {
+		display: grid;
+		font-size: mi.rem(18);
+		gap: mi.rem(10);
+	}
 	&__logo {
 		grid-area: logo;
 		justify-self: start;
 		--width: #{mi.rem(308)};
 		--height: #{mi.rem(100)};
+		@include mi.aval(--width, 208, 308, "none", 1024, 1920);
+		@include mi.aval(--height, 70, 100, "none", 1024, 1920);
+		@media (max-width: config.$mbpT) {
+			justify-self: center;
+			--width: 308px;
+			--height: 100px;
+			margin-bottom: 50px;
+		}
+		@media (max-width: 666px) {
+			--width: 180px;
+			--height: 60px;
+			margin-bottom: 30px;
+		}
 	}
 	&__body {
 		display: grid;
 		grid-template-areas: "logo msg-primary social" "logo msg-primary msg-secondary" "copyright msg-primary developer";
+		grid-template-columns: 1.2fr repeat(2, 1fr);
 		justify-content: space-between;
+		align-items: start;
 		gap: mi.rem(20) mi.rem(70);
 		padding: mi.rem(24) mi.rem(40);
+		@media (max-width: config.$mbpSPC) {
+			gap: mi.rem(20) mi.rem(40);
+		}
+		@media (max-width: config.$mbpT) {
+			grid-template-areas: "logo logo" "msg-primary social" "msg-primary msg-secondary" "msg-primary developer" "copyright copyright";
+			align-items: start;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 0 42px;
+		}
+		@media (max-width: 666px) {
+			grid-template-areas: "logo" "msg-primary" "social" "msg-secondary" "developer" "copyright";
+			grid-template-columns: 100%;
+			justify-items: center;
+			padding: 40px 16px;
+		}
 	}
 	&__copyright {
-		font-family: AktivGrotesk;
+		font-family: var(--font-family-primary);
 		font-weight: 500;
 		font-size: mi.rem(16);
 		line-height: 1.3;
 		grid-area: copyright;
 		align-self: end;
+		@media (max-width: config.$mbpT) {
+			text-align: center;
+			margin-top: 50px;
+		}
+		@media (max-width: 666px) {
+			margin-top: 30px;
+		}
 	}
 	&__msg {
 		display: grid;
 		gap: mi.rem(20);
 		&_primary {
 			grid-area: msg-primary;
+			@media (max-width: 666px) {
+				margin-bottom: 30px;
+			}
 		}
 		&_secondary {
 			grid-area: msg-secondary;
+			@media (max-width: config.$mbpT) {
+				margin-bottom: 18px;
+			}
 		}
 	}
 	&__social {
 		grid-area: social;
 		justify-self: start;
+		@media (max-width: config.$mbpT) {
+			margin-bottom: 18px;
+		}
+		@media (max-width: 666px) {
+			justify-self: center;
+		}
 	}
 	&__developer {
 		grid-area: developer;

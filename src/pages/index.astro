@@ -1,23 +1,280 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const separateSteps = (steps: Array<any>, separator: any) => {
+	const result: Array<any> = [];
+	const lastIdx = steps.length - 1;
+	steps.forEach((step, idx) => {
+		result.push(step);
+		if (idx < lastIdx) {
+			result.push(separator);
+		}
+	});
+	return result;
+}
 ---
 
-<Layout title="Boilerplate" description="Index page" empty={true}>
-	<div class="container">
-		<div class="pages">
-			<h3>Pages</h3>
-			<ol>
-				<li><a href="./home.html" class="link">Home</a></li>
-			</ol>
+<Layout title="Home page" description="Home page">
+	<section class="hero section-space-bottom">
+		<div class="container container_wide">
+			<div class="container container_short hero__body">
+				<div class="hero__col hero__col_info">
+					<h1 class="hero__title">Boost your ratings.<br>Boost your business.</h1>
+					<div class="hero__description">Google reviews drive sales. 95% of your happy patients never leave reviews. RatingsBoost makes leaving a review easy so more happy customers leave 5-star Google reviews.</div>
+					<div class="hero__actions">
+						<a href="" class="btn btn_primary btn_rect-lg">Free Trial</a>
+						<a href="./learn-more" class="btn btn_clear btn_rect-lg">Learn More</a>
+					</div>
+				</div>
+				<div class="hero__col hero__col_animation">
+					<video preload="auto" loop autoplay playsinline muted class="hero__animation">
+						<source src="video.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
 		</div>
-	</div>
+	</section>
+	<section id="how-it-works" class="steps section-space">
+		<div class="container container_wide steps__container">
+			<picture>
+				<source media="(min-width: 1024px)" srcset="img/steps-bg-1.5x.webp" />
+				<img src="img/steps-bg-0.75x.webp" alt="Steps background" class="steps__bg">
+			</picture>
+			<div class="ratio-wrap steps__decor steps__decor_a">
+				<img src="img/circular-decor.svg" alt="Circular decor" class="ratio-wrap__item">
+			</div>
+			<div class="ratio-wrap steps__decor steps__decor_b">
+				<img src="img/circular-decor.svg" alt="Circular decor" class="ratio-wrap__item">
+			</div>
+			<div class="ratio-wrap steps__decor steps__decor_c">
+				<img src="img/circular-decor.svg" alt="Circular decor" class="ratio-wrap__item">
+			</div>
+			<div class="container container_short">
+				<h2 class="steps__title section__title section__title_lg">How it works: 3 steps</h2>
+				<div class="steps__list">
+					{
+						separateSteps([
+							{
+								label: "Step 1",
+								description: "Customer Receives SMS/Email",
+								icon: "mail"
+							},
+							{
+								label: "Step 2",
+								description: "Clicks to Leave a Review",
+								icon: "star-clear"
+							},
+							{
+								label: "Step 3",
+								description: "Smart Routing Boosts Your Reputation",
+								icon: null,
+							}
+						].map((meta) => <div class="steps__card step-card">
+							<div class="step-card__label">{meta.label}</div>
+							{
+								meta.icon ? <div class="step-card__icon-wrap">
+									<div class:list={["step-card__icon", `icon-${meta.icon}`]}></div>
+								</div> : 
+								<div class="ratio-wrap ratio-wrap_contain step-card__logo">
+									<img src="img/logo-mark.svg" alt="Ratings boost logo" class="ratio-wrap__item" />
+								</div>
+							}
+							<div class="step-card__description">{meta.description}</div>
+						</div> ), <div class="steps__separator"></div>)
+					}
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="boost section-space">
+		<div class="container container_wide">
+			<div class="container container_short boost__body">
+				<div class="boost__col boost__col_img">
+					<div class="ratio-wrap ratio-wrap_contain boost__img">
+						<img src="img/boost.svg" alt="Boost" class=" ratio-wrap__item">
+					</div>
+				</div>
+				<div class="boost__col boost__col_info">
+					<h2 class="boost__title section__title">Boost your ratings.<br>Boost your business.</h2>
+					<div class="boost__msg">Google reviews drive sales. 95% of your happy customers never leave reviews. We change that to make more happy customers leave 5-star Google reviews for what you do best.</div>
+					<div class="boost__actions">
+						<a href="" class="btn btn_primary btn_rect-lg">Free Trial</a>
+						<a href="./learn-more" class="btn btn_clear btn_rect-lg">Learn More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="advantages section-space">
+		<div class="container container_wide advantages__container">
+			<div class="container container_short advantages__body" data-component="advantages-slider">
+				<div class="advantages__wrapper swiper-wrapper">
+					{
+						[
+							{
+								icon: "fast-setup",
+								text: "Fast Setup"
+							},
+							{
+								icon: "feedback",
+								text: "Auto Routing"
+							},
+							{
+								icon: "five-stars",
+								text: "Boost Visibility"
+							},
+							{
+								icon: "free-trial",
+								text: "3-month Free Trial"
+							}
+						].map(meta => <div class="advantages__item swiper-slide">
+							<img src={`img/icons/${meta.icon}.svg`} class="advantages__icon" alt="Advantage icon" />
+							<div class="advantages__text">{meta.text}</div>
+						</div> )
+					}
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="pricing" class="packages section-space">
+		<div class="container container_wide">
+			<div class="container container_short packages__body">
+				<h2 class="packages__title section__title">Choose the Right Plan to Turn Reviews into Revenue</h2>
+				<div class="packages__list" data-component="packages-slider">
+					<div class="packages__list-wrapper swiper-wrapper">
+						{
+							[
+								{
+									label: "Basic",
+									description: "Best for professionals to grow online reputation quickly",
+									icon: "package-basic",
+									items: [
+										"1 location",
+										"Up to 50 automated review requests/month",
+										"Smart sentiment-based routing",
+										"Real-time notifications",
+										"Google review optimization"
+									],
+									price: "$1,200",
+								},
+								{
+									label: "Pro",
+									description: "Best for small businesses to establish online authority",
+									icon: "package-pro",
+									items: [
+										"All in Basic",
+										"3 locations",
+										"Up to 200 automated review requests/month",
+										"Zapier integration",
+										"Priority email support"
+									],
+									price: "$1,800",
+								},
+								{
+									label: "Enterprise",
+									description: "Best for established businesses to scale online presence",
+									icon: "package-enterprise",
+									items: [
+										"All in Pro",
+										"25 locations",
+										"Unlimited review requests/month",
+										"API access",
+										"Dedicated support line"
+									],
+									price: "$2,400",
+								}
+							].map((meta) => <div class="packages-card swiper-slide">
+																<div class="packages-card__header">
+																	<div class="packages-card__label">{meta.label}</div>
+																	<img src={`img/icons/${meta.icon}.svg`} alt="Package icon" class="packages-card__icon" />
+																	<div class="packages-card__description">{meta.description}</div>
+																	
+																</div>
+																<div class="packages-card__separator"></div>
+																<ul class="packages-card__features">
+																	{
+																		meta.items.map(text => <li class="packages-card__item">{text}</li>)
+																	}
+																</ul>
+																<div class="packages-card__price">{meta.price}</div>
+																<a href="" class="btn btn_primary btn_rect-lg packages-card__btn">Start now</a>
+															</div>
+							)
+						}
+					</div>
+				</div>
+			</div>
+	</section>
+	<section id="testimonials" class="testimonials section-space" data-component="testimonials">
+		<div class="testimonials__wrap">
+			<div class="testimonials__inner">
+				<div class="testimonials__bg ratio-wrap ratio-wrap_contain">
+					<img src="img/testimonials-bg.webp" alt="Testimonials background" class="ratio-wrap__item">
+				</div>
+				<div class="container container_wide testimonials__container">
+					<div class="container container_short testimonials__body">
+						<div class="ratio-wrap testimonials__decor">
+							<img src="img/circular-decor.svg" alt="Circular decor" class="ratio-wrap__item">
+						</div>
+						<div class="testimonials__title section__title section__title_lg">Testimonials</div>
+						<div class="testimonials__slider swiper" data-elem="testimonials.slider">
+							<div class="swiper-wrapper">
+									{
+										[
+											{
+												name: "Dr. L. Morgan",
+												company: "Plastic Surgeon",
+												avatar: "avatar-01",
+												stars: 5,
+												msg: `“In 3 months, our Google reviews jumped from 4.1 to 4.8—and bookings followed.”`
+											},
+											{
+												name: "Robert Fox",
+												company: "Wellness Spa Owner",
+												avatar: "avatar-02",
+												stars: 5,
+												msg: `“Clients love how easy it is. We love seeing our 5-stars grow.”`
+											},
+											{
+												name: "Brooklyn Simmons",
+												company: "IT Consultant",
+												avatar: "avatar-03",
+												stars: 5,
+												msg: `“The automation just works. Our reputation’s never been stronger.”`
+											},
+										].map((meta) =>  <div class="testimonials-card swiper-slide">
+																			<div class="testimonials-card__top">
+																				<img src={`img/testimonials/${meta.avatar}.webp`} alt="Client's avatar" class="testimonials-card__avatar">
+																				<div class="testimonials-card__name">{meta.name}</div>
+																			</div>
+																			<div class="testimonials-card__middle">
+																				<div class="testimonials-card__company">{meta.company}</div>
+																				<div class="testimonials-card__stars">
+																					{ Array(meta.stars).fill(0).map(() => <div class="icon-star"></div>) }
+																				</div>
+																			</div>
+																			<div class="testimonials-card__msg">{meta.msg}</div>
+																		</div> )
+									}
+							</div>
+						</div>
+						<div class="testimonials__slider-nav">
+							<button type="button" class="btn btn_slider-nav" data-elem="testimonials.slider.prev">
+								<span class="btn__label btn__label_hidden">Previous slide</span>
+								<span class="icon-arrow-left btn__icon"></span>
+							</button>
+							<button type="button" class="btn btn_slider-nav" data-elem="testimonials.slider.next">
+								<span class="btn__label btn__label_hidden">Next slide</span>
+								<span class="icon-arrow-right btn__icon"></span>
+							</button>
+						</div>
+						<div class="testimonials__actions">
+							<a href="" class="btn btn_primary btn_rect-lg">Free Trial</a>
+							<a href="./learn-more" class="btn btn_clear btn_rect-lg">Learn More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </Layout>
-<style>
-	.container {
-		padding: 40px;
-	}
-	h3 {
-		font-weight: 600;
-		margin-bottom: 20px;
-	}
-</style>
